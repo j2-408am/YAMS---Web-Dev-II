@@ -1,0 +1,352 @@
+/* -----BASE----- */
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif; /* Default font for content */
+    background-color: #231651; /* Chosen page bg colot */
+    color: #070410;
+}
+
+/* ----- HEADER----- */
+header {
+    background-color: #070410;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread items apart */
+    padding: 16px; /* Spaces in the header */
+    color: #fff;
+    box-shadow: 0 4px rgba(85, 84, 84, 0.425); /* Adds shadow to boxes to create depth */
+}
+
+.logo {
+    font-family: 'Teko', sans-serif; /* Specific font for logo */
+    font-size: 2em;
+    color: #EEF36A; /* Font color of logo */
+}
+
+nav a {
+    margin: 0 16px;
+    text-decoration: none; /* Removes underline for each link */
+    color: #fff;
+    font-size: 1em; /* Link size */
+}
+
+/* Optional: Added for effect */
+nav a:hover {
+    color: #4DCCBD;
+}
+
+/* -----SEARCH----- */
+.search-btn {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    padding: 8px 16px;
+    border-radius: 4px; /*Make corners rounded */
+    border: none; /*Eliminates border */
+    background-color: #EEF36A;
+    cursor: pointer; /* Effect to change mouse to pointer when hovered */
+}
+
+/* -----MAIN CONTENT----- */
+main {
+    display: flex; /* To center content */
+    justify-content: center; /* Center content horizontally */
+    padding: 48px;
+}
+
+.movie-grid {
+    max-width: 900px; /* Set limit width */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout for movies */
+    gap: 16px; /* Given space between movies */
+}
+
+.movie {
+    display: flex;
+    flex-direction: column; /* To stack image and info vertically */
+    background-color: #4DCCBD;
+    border-radius: 8px;
+    overflow: hidden; /* To make sure contents are inside the box */
+}
+
+/* -----IMAGE FIX----- */
+.movie .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure image is cropped properly */
+    display: block; /* No extra spaces below an image */
+}
+
+/* -----LARGE MOVIE (BARBIE)----- */
+.movie.large {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column; /* Image and info are stacked vertically */
+    gap: 16px;
+    box-shadow: 10px 5px rgba(85, 84, 84, 0.69); /* Shadows for box depth and design purposes */
+}
+
+.movie.large .image {
+    width: 100%;
+    height: 400px; /* Fixed height */
+}
+
+.movie.large .info {
+    display: flex;
+    flex-direction: row; /* Text and button for first movie are side-by-side */
+    justify-content: space-between;
+    align-items: flex-start; /* Align text at top */
+    padding: 16px;
+}
+
+.movie.large .info-text {
+    flex: 1;
+    margin-right: 18px;
+}
+
+.movie.large .barbie-btn {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px; /* Space below button to align with text accurately */
+    padding: 8px 16px;
+    border-radius: 10px;
+    width: 145px;
+    height: 120px;
+    white-space: normal; /* Allows text to wrap */
+    text-align: center; /* Makes text inside the button positioned in the center */
+    line-height: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF36A;
+    border: none;
+    cursor: pointer; /* Pointer when hovered */
+}
+
+/* -----SMALL MOVIES----- */
+.movie.small {
+    flex-direction: column; /* stack image and info vertically this time */
+    box-shadow: 10px 5px rgba(85, 84, 84, 0.69);
+}
+
+.movie.small .image {
+    height: 450px; /* Fixed height */
+}
+
+.movie.small .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.movie.small .small-btn {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    margin-right: 2px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #EEF36A;
+    border: none;
+    cursor: pointer;
+    width: 400px;
+    height: 90px;
+}
+
+/* -----MEDIUM MOVIES----- */
+.movie.medium {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row; /* Text and image side-by-side again */
+    gap: 16px;
+    box-shadow: 10px 5px rgba(85, 84, 84, 0.69);
+}
+
+.movie.medium .image {
+    width: 500px;
+    height: 550px;
+}
+
+.movie.medium .info {
+    width: 50%;
+    background-color: #4DCCBD;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes the button to the bottom */
+}
+
+.movie.medium .medi-btn {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #EEF36A;
+    border: none;
+    cursor: pointer;
+    width: 350px;
+    height: 90px;
+}
+
+/* -----TEXT & BUTTONS----- */
+.info h3 {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em; /* Bigger font for movie titles */
+    margin: 5px 0;
+}
+
+.info p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em; /* Default text size */
+    color: #070410;
+}
+
+.info button {
+    align-self: flex-end; /* Make sure buttons are properly aligned to the right */
+}
+
+/* -----RESPONSIVE STYLES----- */
+
+/* -----Tablet----- */
+@media screen and (min-width: 720px) and (max-width: 1023px) {
+    main {
+        padding: 32px; /* Padding decreased for smaller screens */
+    }
+
+    .logo {
+        font-size: 3em;
+    }
+
+    header {
+        padding: 16px 32px;
+    }
+
+    nav a {
+        margin: 0 20px;
+    }
+
+    .info h3 {
+        font-size: 3em;
+    }
+
+    /* 2-column grid */
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Stack images + info vertically */
+    .movie.large,
+    .movie.medium,
+    .movie.small {
+        grid-column: span 1;
+        flex-direction: column;
+    }
+
+    /* Properly position info in boxes */
+    .movie.large .info,
+    .movie.medium .info,
+    .movie.small .info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px;
+        margin-left: 2px;
+        flex-direction: column;
+    }
+
+    /* Image sizing */
+    .movie.large .image,
+    .movie.medium .image,
+    .movie.small .image {
+        width: 100%;
+        height: 400px;
+    }
+
+    /* Center all buttons below info */
+    .movie.large .barbie-btn,
+    .movie.medium .medi-btn,
+    .movie.small .small-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 16px auto 0; /* horizontally center the button in container */
+        width: 250px;
+        height: 90px;
+        font-size: 2em;
+    }
+}
+
+/* -----DESKTOP----- */
+@media screen and (min-width: 1024px) {
+    header {
+        padding: 16px 48px; /* Increase space size for bigger screens */
+    }
+}
+
+/* -----MOBILE----- */
+@media screen and (max-width: 360px) {
+    main {
+        padding: 16px;
+    }
+
+    header {
+        padding: 16px 32px;
+    }
+
+    nav a {
+        margin: 0 20px;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr; /* all movies in a single column */
+        gap: 16px;
+    }
+
+    /* Stack image + info for all movies */
+    .movie.large,
+    .movie.medium,
+    .movie.small {
+        flex-direction: column;
+        grid-column: span 1;
+    }
+
+    /* Images full width, height auto */
+    .movie.large .image,
+    .movie.medium .image,
+    .movie.small .image {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Info container full width, stack text + button */
+    .movie.large .info,
+    .movie.medium .info,
+    .movie.small .info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Center all watch now buttons */
+    .movie.large .barbie-btn,
+    .movie.medium .medi-btn,
+    .movie.small .small-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 12px auto 0;
+        width: 90%;   
+        max-width: 250px;
+        height: 80px;  
+        font-size: 2em;
+    }
+
+    /* Text sizes are decreased for smaller screens */
+    .info h3 {
+        font-size: 2em;
+    }
+
+    .info p {
+        font-size: 1.5em;
+    }
+}
